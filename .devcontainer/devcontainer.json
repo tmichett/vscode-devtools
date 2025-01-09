@@ -7,5 +7,6 @@
     // Bind local workspace to container workspace
     "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,Z",
     // Install git, github cli, podman and Python with PIP and // Install Ansible tools
-    "postCreateCommand": "dnf install -y git gh ansible-core podman python3-pip && pip install ansible-navigator ansible-builder ansible ansible-dev-tools"
-    }
+    //"postCreateCommand": "dnf install -y git gh ansible-core podman python3-pip vim tree && pip install ansible-navigator ansible-builder ansible ansible-dev-tools"
+    "postCreateCommand": "dnf install -y git gh ansible-core podman python3-pip vim tree
+}
