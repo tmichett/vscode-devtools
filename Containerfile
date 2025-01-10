@@ -15,4 +15,7 @@ RUN cd /opt/tools && \
     pip install pre-commit && \
     deactivate && \
     rm -rf /opt/tools/pre-commit_venv.tgz
+RUN mkdir /Github && \
+    cd /Github && \
+    git config --global --add safe.directory /Github
 
