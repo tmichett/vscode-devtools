@@ -3,13 +3,14 @@ VSCode Dev Tools Container
 
 The `.devcontainer/devcontainer.json` can be added to any respository to allow devlopment in VSCode through the specified container. This repository is used to allow running of a **PreCommit** container which will run all `pre-commit` checks on a selected repository. There is a provided **precommit_config.env** environment file to add your SSH key configuration information. This can be used with the **Run_Precommit_Check.sh** script to run `pre-commit` checks in the current working directory. The **Run_Precommit_Check_Interactive.sh** will prompt the user for the Github repository directory, the directory that contains your Github SSH Key, and the name of your Github SSH Key.
 
-
-
 The scripts utilize the container image built from Containerfile and it has been built and is available at **quay.io/tmichett/precommit_check**.
 
 # Before you Begin
 
 Copy the **Run_Precommit_Check.sh** and **Run_Precommit_Check_Interactive.sh** to your path. In my instance, I am using **/usr/local/bin**.
+
+> [!WARNING]
+> You must copy the scripts in order to utilize the container tools effectively. The easiest path forward is to use the **Run_Precommit_Check** script as it will run pre-commit and complete the checks for you.
 
 1. Copy the correct Script files to a binary path in your directory. In this instance, **/usr/local/bin**.
 ```
@@ -27,6 +28,9 @@ sudo cp Run_Precommit_Check_Interactive.sh /usr/bin/local/
 SSH_KEY_PATH="$HOME/.ssh"
 SSH_PVT_KEY="github_id"
 ```
+
+> [!IMPORTANT]
+> You must either create **$HOME/precommit_config.env** or edit and copy the existing file to your home directory. This sets environment variables used by the various scripts.
 
 2. Enter the Github repo project directory.
 ```
